@@ -62,7 +62,37 @@
           La musique à <strong>130BPM</strong>.
         </p>
         <p>
-          <img src="https://scontent-cdt1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/118732071_1016753725405374_2117042136243170555_n.jpg?_nc_ht=scontent-cdt1-1.cdninstagram.com&_nc_cat=106&_nc_ohc=M-_dbMOtg2sAX9fGvtR&_nc_tp=15&oh=ff45542d454443179fa7044bfebc01dc&oe=5FB91138" class="img-circle" width="25%" alt="Jean-Baptiste Doré">
+    <div class="slideshow-container carousel">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img class="carousel" src="https://scontent-cdt1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/118732071_1016753725405374_2117042136243170555_n.jpg?_nc_ht=scontent-cdt1-1.cdninstagram.com&_nc_cat=106&_nc_ohc=M-_dbMOtg2sAX9XiR5E&_nc_tp=15&oh=2d44968a0cd98c0bc452730d7a80fea4&oe=5FB91138" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img class="carousel" src="images/mix2.png" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img class="carousel" src="images/mix.jpeg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
         </p>
       </div>
       <div class="card-white">
@@ -75,7 +105,7 @@
         <h2>Mes Réseaux Sociaux</h2>
         <ul class="list-inline">
           <li>
-            <a href="https://github.com/" target="_blank">
+            <a href="https://bajedo263.github.io/Mon-Profil/" target="_blank">
               <i class="fab fa-github-square"></i>
             </a>
           </li>
@@ -103,6 +133,34 @@ function myFunction() {
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+// CAROUSEL
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
 }
 </script>
   </body>
